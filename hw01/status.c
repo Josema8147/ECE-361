@@ -22,3 +22,4 @@ if (status.mode >=5) {
     status.mode = UINT32_MAX;
 }
 return status;
+}
