@@ -1,5 +1,5 @@
 #ifndef BITS_H
-#Define BITS_H
+#define BITS_H
 
 #include <stdint.h>
 
