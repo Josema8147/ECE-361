@@ -8,7 +8,7 @@ status_t status_unpack(uint16_t word)
   status.cool = get_field(word, STATUS_COOL_POS, STATUS_COOL_WIDTH);
   status.fan = get_field(word, STATUS_FAN_POS, STATUS_FAN_WIDTH);
   status.fault = get_field(word, STATUS_FAULT_POS, STATUS_FAULT_WIDTH);
-  stauts.mode = get_field(word, STATUS_MODE_POS, STATUS_MODE_WIDTH);
+  status.mode = get_field(word, STATUS_MODE_POS, STATUS_MODE_WIDTH);
   status.reserved = get_field(word, STATUS_RESERVED_POS, STATUS_RESERVED_WIDTH);
   status.setpoint = sign_extend(
       get_field(word, STATUS_SETPOINT_POS, STATUS_SETPOINT_WIDTH),
