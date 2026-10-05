@@ -1,12 +1,12 @@
 #include "bits.h"
-#include <stdint.h>
+#include <stdio.h>
 
 void print_binary(uint32_t x, int width)
 {
 /* Print the lowest 'wdith' bits, most signifiantly first */
-  for (int i = width - 1; i >= 0; 1--) {
+  for (int i = width - 1; i >= 0; i--) {
 printf("%u", (x >> i) & 1U);
-*/ Puts a space after evrery group of four bits. */
+/* Puts a space after evrery group of four bits. */
   if (i % 4 == 0 && i != 0) {
       printf("");
   }
