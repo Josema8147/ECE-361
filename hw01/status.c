@@ -1,5 +1,5 @@
 #include "status.h"
-#inlcude "bits.h"
+#include "bits.h"
 
 status_t status_unpack(uint16_t word)
 {
