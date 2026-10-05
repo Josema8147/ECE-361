@@ -108,7 +108,7 @@ value &= mask;
 /*
  *If the sign bit is 1, fill all higher bits with 1s.
  */
-if (width < 32 && (value & (UINT32_C(1) << (width -1))) {
+if (width < 32 && (value & (UINT32_C(1) << (width -1)))) {
     value |= ~mask;
 }
 return (int32_t)value;
