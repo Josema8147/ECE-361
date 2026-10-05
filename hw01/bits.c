@@ -8,7 +8,7 @@ void print_binary(uint32_t x, int width)
 printf("%u", (x >> i) & 1U);
 /* Puts a space after evrery group of four bits. */
   if (i % 4 == 0 && i != 0) {
-      printf("");
+      printf(" ");
   }
 }
 printf("\n");
