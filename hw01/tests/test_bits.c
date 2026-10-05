@@ -18,7 +18,6 @@ if (expected == actual) {
     tests_failed++;
 }
 
-
 }
 
 static void check_uint32(const char *name,
@@ -34,7 +33,6 @@ if (expected == actual) {
            name, expected, actual);
     tests_failed++;
 }
-
 
 }
 
@@ -63,7 +61,6 @@ if (actual.heat == heat &&
     printf("FAIL: %s\n", name);
     tests_failed++;
 }
-
 
 }
 
@@ -232,6 +229,4 @@ if (tests_failed == 0) {
 
 printf("Some tests failed.\n");
 return 1;
-
-
 }
