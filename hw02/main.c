@@ -5,10 +5,19 @@
 #include "stats.h"
 #include "histogram.h"
 
+#ifdef _WIN32
+#include <fcntl.h>
+#include <io.h>
+#endif
+
 #define MAX_READINGS 1000
 
 int main(int argc, char *argv[])
 {
+#ifdef _WIN32
+    _setmode(_fileno(stdout), _O_BINARY);
+#endif
+
     int ticks[MAX_READINGS];
     float temps[MAX_READINGS];
     float hums[MAX_READINGS];
@@ -25,6 +34,7 @@ int main(int argc, char *argv[])
     if (argc == 2) {
         char *end;
         threshold = strtof(argv[1], &end);
+
         if (*end != '\0') {
             fprintf(stderr, "error: threshold '%s' is not a number\n",
                     argv[1]);
