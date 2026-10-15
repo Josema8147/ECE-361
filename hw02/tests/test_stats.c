@@ -65,11 +65,39 @@ static void test_large_recursive_maximum(void)
     enum { SIZE = 10000 };
     float a[SIZE];
 
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < SIZE; i++) {
         a[i] = (float)i;
+    }
 
     check(close_enough(stats_max(a, SIZE), 9999.0f),
           "recursive maximum of 10000 values");
+}
+
+static void test_tail_maximum(void)
+{
+    const float a[] = {4.0f, 19.0f, -3.0f, 27.0f, 8.0f};
+
+    check(close_enough(stats_max_tail(a, 5), 27.0f),
+          "tail maximum returns the correct result");
+
+    check(close_enough(stats_max(a, 5), stats_max_tail(a, 5)),
+          "tail maximum agrees with recursive maximum");
+}
+
+static void test_tail_maximum_one_value(void)
+{
+    const float a[] = {42.5f};
+
+    check(close_enough(stats_max_tail(a, 1), 42.5f),
+          "tail maximum with one value");
+}
+
+static void test_tail_maximum_negative_values(void)
+{
+    const float a[] = {-10.0f, -3.0f, -25.0f, -7.0f};
+
+    check(close_enough(stats_max_tail(a, 4), -3.0f),
+          "tail maximum with negative values");
 }
 
 int main(void)
@@ -79,6 +107,9 @@ int main(void)
     test_maximum_at_end();
     test_threshold_ends_run();
     test_large_recursive_maximum();
+    test_tail_maximum();
+    test_tail_maximum_one_value();
+    test_tail_maximum_negative_values();
 
     printf("\nTests run: %d, failures: %d\n",
            tests_run, tests_failed);

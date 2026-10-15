@@ -14,6 +14,13 @@ float stats_min(const float a[], int n);
 float stats_max(const float a[], int n);
 
 /*
+ * Return the maximum element using tail recursion.
+ * Assumes a points to an array containing at least n elements,
+ * and n >= 1.
+ */
+float stats_max_tail(const float a[], int n);
+
+/*
  * Return the arithmetic mean of array a
  * Assumes a points to an array containing at least n elements, and n >= 1.
  */
