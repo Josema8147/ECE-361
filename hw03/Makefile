@@ -1,12 +1,12 @@
 CC = gcc
 CFLAGS = -std=c11 -Wall -Wextra
 
-.PHONy: all test clean
+.PHONY: all test clean
 
 all: ptr.o tests/test_ptr
 
 ptr.o: ptr.c ptr.h
-	$(CC) $(CFLAGS) -c ptr.c - ptr.o
+	$(CC) $(CFLAGS) -c ptr.c -o ptr.o
 
 tests/test_ptr: tests/test_ptr.c ptr.o ptr.h
 	$(CC) $(CFLAGS) tests/test_ptr.c ptr.o -o tests/test_ptr
