@@ -63,7 +63,7 @@ void reverse(float *a, int n)
         return; // Error: invalid input
     }
     
-    float *left = a
+    float *left = a;
     float *right = a + n - 1;
    
     while (left < right) 
