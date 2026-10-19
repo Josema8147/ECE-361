@@ -1,0 +1,5 @@
+# Compiled object files
+*.o
+
+# Compiled test executables
+tests/test_ptr
