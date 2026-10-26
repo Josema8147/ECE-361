@@ -2,7 +2,7 @@
 
 #include <stddef.h>
 
-void swap(float *a, float*b) 
+void swap_float(float *a, float*b) 
 {
     float temp = *a;
     *a = *b;

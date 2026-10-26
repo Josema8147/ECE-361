@@ -1,0 +1,16 @@
+# Compiled executables
+events
+hw04/events
+hw04/tests/test_tally
+
+# Object files
+*.o
+
+# Debugging files
+*.core
+core
+
+# Editor and operating system files
+*~
+.DS_Store
+.vscode/
